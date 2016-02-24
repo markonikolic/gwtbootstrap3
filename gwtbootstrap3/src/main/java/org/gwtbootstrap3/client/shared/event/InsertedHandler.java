@@ -1,10 +1,10 @@
-package org.gwtbootstrap3.client;
+package org.gwtbootstrap3.client.shared.event;
 
 /*
  * #%L
  * GwtBootstrap3
  * %%
- * Copyright (C) 2013 - 2016 GwtBootstrap3
+ * Copyright (C) 2015 GwtBootstrap3
  * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,20 +20,11 @@ package org.gwtbootstrap3.client;
  * #L%
  */
 
-import com.google.gwt.core.client.GWT;
-import com.google.gwt.resources.client.ClientBundle;
-import com.google.gwt.resources.client.TextResource;
+import com.google.gwt.event.shared.EventHandler;
 
 /**
- * @author Sven Jacobs
+ * @author Steven Jardine
  */
-public interface GwtBootstrap3ClientBundle extends ClientBundle {
-
-    static final GwtBootstrap3ClientBundle INSTANCE = GWT.create(GwtBootstrap3ClientBundle.class);
-
-    @Source("resource/js/jquery-1.12.0.min.cache.js")
-    TextResource jQuery();
-
-    @Source("resource/js/bootstrap-3.3.6.min.cache.js")
-    TextResource bootstrap();
+public interface InsertedHandler extends EventHandler {
+    void onInserted(InsertedEvent event);
 }

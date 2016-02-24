@@ -1,10 +1,10 @@
-package org.gwtbootstrap3.client;
+package org.gwtbootstrap3.client.ui.base;
 
 /*
  * #%L
  * GwtBootstrap3
  * %%
- * Copyright (C) 2013 - 2016 GwtBootstrap3
+ * Copyright (C) 2013 - 2015 GwtBootstrap3
  * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,20 +20,17 @@ package org.gwtbootstrap3.client;
  * #L%
  */
 
-import com.google.gwt.core.client.GWT;
-import com.google.gwt.resources.client.ClientBundle;
-import com.google.gwt.resources.client.TextResource;
-
 /**
- * @author Sven Jacobs
+ * @author Drew Spencer
  */
-public interface GwtBootstrap3ClientBundle extends ClientBundle {
+import org.gwtbootstrap3.client.ui.constants.BadgePosition;
 
-    static final GwtBootstrap3ClientBundle INSTANCE = GWT.create(GwtBootstrap3ClientBundle.class);
+public interface HasBadge {
+    void setBadgeText(String badgeText);
 
-    @Source("resource/js/jquery-1.12.0.min.cache.js")
-    TextResource jQuery();
+    String getBadgeText();
 
-    @Source("resource/js/bootstrap-3.3.6.min.cache.js")
-    TextResource bootstrap();
+    void setBadgePosition(BadgePosition badgePosition);
+
+    BadgePosition getBadgePosition();
 }
